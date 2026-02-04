@@ -12,16 +12,23 @@ public class RaftServer {
     private RaftNode raftNode;
     private int port;
 
+    private Logger logger;
+
+    
+     // Initializes the server with its ID, port, and cluster members.
+
     public RaftServer(int id, int port, Map<Integer, Integer> clusterMembers) throws Exception {
         this.port = port;
         this.socket = new DatagramSocket(port);
         this.raftNode = new RaftNode(id, clusterMembers);
+        this.logger = new Logger("Node-" + id, "logs/node_" + id + ".log");
+        this.raftNode.setLogger(this.logger);
     }
 
      // Starts the server's background threads and main logic loop.
 
     public void start() {
-        System.out.println("Server " + raftNode.id + " started on port " + port);
+        logger.log("Server " + raftNode.id + " started on port " + port);
 
         //Network Receiver Thread 
         // Continuously listens for incoming UDP packets and dispatches them to handlePacket
@@ -31,8 +38,10 @@ public class RaftServer {
                 try {
                     DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
                     socket.receive(packet);
+                    logger.log("Received packet from " + packet.getAddress() + ":" + packet.getPort() + " sent to handlePacket");
                     handlePacket(packet);
                 } catch (Exception e) {
+                    logger.log("Error handling packet: " + e.getMessage());
                     e.printStackTrace();
                 }
             }
@@ -54,11 +63,14 @@ public class RaftServer {
                     // Apply committed entries that haven't been applied yet
                     while (raftNode.lastApplied < raftNode.commitIndex) {
                         raftNode.lastApplied++;
-                        RaftRPC.LogEntry entry = raftNode.log.get(raftNode.lastApplied);
-                        System.out.println("Applied to State Machine: " + entry.command);
+                        if (raftNode.lastApplied < raftNode.log.size()) {
+                            RaftRPC.LogEntry entry = raftNode.log.get(raftNode.lastApplied);
+                            logger.log("Applied to State Machine: " + entry.command + " at index " + raftNode.lastApplied);
+                        }
                     }
                 }
             } catch (Exception e) {
+                logger.log("Error in main loop: " + e.getMessage());
                 e.printStackTrace();
             }
         }
@@ -73,20 +85,24 @@ public class RaftServer {
 
             if (obj instanceof RaftRPC.RequestVoteArgs) {
                 // Handle a vote request from another node
+                logger.log("Handling RequestVoteArgs from " + packet.getAddress() + ":" + packet.getPort());
                 RaftRPC.RequestVoteResults res = raftNode.handleRequestVote((RaftRPC.RequestVoteArgs) obj);
                 sendResponse(res, packet.getAddress(), packet.getPort());
 
             } else if (obj instanceof RaftRPC.AppendEntriesArgs) {
                 // Handle a heartbeat or log replication request from a leader
+                logger.log("Handling AppendEntriesArgs from " + packet.getAddress() + ":" + packet.getPort());
                 RaftRPC.AppendEntriesResults res = raftNode.handleAppendEntries((RaftRPC.AppendEntriesArgs) obj);
                 sendResponse(res, packet.getAddress(), packet.getPort());
 
             } else if (obj instanceof RaftRPC.RequestVoteResults) {
                 // Handle a vote response we received after starting an election
+                logger.log("Handling RequestVoteResults from " + packet.getAddress() + ":" + packet.getPort());
                 handleVoteResult((RaftRPC.RequestVoteResults) obj);
 
             } else if (obj instanceof RaftRPC.AppendEntriesResults) {
                 // Handle a response to a log replication request we sent
+                logger.log("Handling AppendEntriesResults from " + packet.getAddress() + ":" + packet.getPort());
                 int fromId = -1;
                 for (Map.Entry<Integer, Integer> entry : raftNode.clusterMembers.entrySet()) {
                     if (entry.getValue() == packet.getPort()) {
@@ -105,17 +121,21 @@ public class RaftServer {
     // Initiates an election by requesting votes from all other cluster members.
      
     private void startElection() throws Exception {
+        logger.log("Election timeout! Starting election for term " + (raftNode.currentTerm + 1));
         raftNode.startElection();
         votesReceived = 1; // Vote for self ofc
-        
+
+        logger.log("Requesting votes from other nodes...");
         RaftRPC.RequestVoteArgs args = new RaftRPC.RequestVoteArgs(
             raftNode.currentTerm, raftNode.id, 
             raftNode.log.size() - 1, 
             raftNode.log.isEmpty() ? 0 : raftNode.log.get(raftNode.log.size() - 1).term
         );
+        
 
         for (Map.Entry<Integer, Integer> member : raftNode.clusterMembers.entrySet()) {
             if (member.getKey() != raftNode.id) {
+                logger.log("Requesting vote from node " + member.getKey() + " at port " + member.getValue());
                 sendRequest(args, "localhost", member.getValue());
             }
         }
@@ -125,14 +145,15 @@ public class RaftServer {
     //Processes a vote response and transitions to leader if a majority is reached.
     private void handleVoteResult(RaftRPC.RequestVoteResults res) {
         if (res.term > raftNode.currentTerm) {
-            System.out.println("Received higher term (" + res.term + "), stepping down");
+            logger.log("Received higher term (" + res.term + "), stepping down");
             raftNode.stepDown(res.term);
             return;
         }
         if (raftNode.role == RaftNode.Role.CANDIDATE && res.voteGranted) {
             votesReceived++;
-            System.out.println("Vote received! Total votes: " + votesReceived + "/" + raftNode.clusterMembers.size());
+            logger.log("Vote received! Total votes: " + votesReceived + "/" + raftNode.clusterMembers.size());
             if (votesReceived > raftNode.clusterMembers.size() / 2) {
+                logger.log("Majority votes received! Becoming leader for term " + raftNode.currentTerm);
                 raftNode.becomeLeader();
             }
         }
@@ -142,11 +163,15 @@ public class RaftServer {
     //Sends heartbeats to all followers.
     //heartbeats are just empty AppendEntries Requests
     private void sendHeartbeats() throws Exception {
-        if (System.currentTimeMillis() - raftNode.lastHeartbeat < 1500) return;
+        if (System.currentTimeMillis() - raftNode.lastHeartbeat < 1500) {
+            logger.log("Less than 1500ms since last heartbeat, skipping heartbeat send");
+            return;
+        }
         raftNode.lastHeartbeat = System.currentTimeMillis();
-
+        logger.log("Sending heartbeats to followers...");
         for (Map.Entry<Integer, Integer> member : raftNode.clusterMembers.entrySet()) {
             if (member.getKey() != raftNode.id) {
+                logger.log("Sending heartbeat to node " + member.getKey() + " at port " + member.getValue());
                 RaftRPC.AppendEntriesArgs args = new RaftRPC.AppendEntriesArgs(
                     raftNode.currentTerm, raftNode.id, 
                     raftNode.log.size() - 1,
@@ -163,6 +188,7 @@ public class RaftServer {
 
     private void handleAppendEntriesResult(RaftRPC.AppendEntriesResults res, int fromId) {
         if (res.term > raftNode.currentTerm) {
+            logger.log("Received higher term (" + res.term + "), stepping down");
             raftNode.stepDown(res.term);
             return;
         }
@@ -170,6 +196,7 @@ public class RaftServer {
         if (raftNode.role == RaftNode.Role.LEADER) {
             if (res.success) {
                 // Update the match index for this follower
+                logger.log("AppendEntries successful from node " + fromId + ", updating matchIndex");
                 raftNode.matchIndex.put(fromId, raftNode.log.size() - 1);
                 updateCommitIndex();
             }
@@ -182,12 +209,13 @@ public class RaftServer {
         int count = 1; // self
         int lastIndex = raftNode.log.size() - 1;
         for (int match : raftNode.matchIndex.values()) {
-            if (match >= lastIndex) count++;
+            if (match >= lastIndex && match >= 0) count++;  // Only count if match index >= 0 (has replicated)
         }
         
+        logger.log("Checking commit index: " + count + " nodes have replicated index " + lastIndex);
         if (count > raftNode.clusterMembers.size() / 2 && lastIndex > raftNode.commitIndex) {
             raftNode.commitIndex = lastIndex;
-            System.out.println("Majority reached! Committed up to index " + raftNode.commitIndex);
+            logger.log("Majority reached! Committed up to index " + raftNode.commitIndex);
         }
     }
 
