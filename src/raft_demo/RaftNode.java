@@ -16,6 +16,9 @@ public class RaftNode {
     // CandidateId that received vote in current term
     public Integer votedFor = null;
 
+    // Tracks current leader's ID
+    public Integer currentLeaderId = null;
+
     // Log entries
     public List<RaftRPC.LogEntry> log = new ArrayList<>();
 
@@ -29,6 +32,9 @@ public class RaftNode {
     // For leaders, this resets after election
     // For each server, index of the highest log entry known to be replicated on that server
     public Map<Integer, Integer> matchIndex = new HashMap<>();
+
+    // For leaders, index of the next log entry to send to each follower
+    public Map<Integer, Integer> nextIndex = new HashMap<>();
 
      //---------------------------------
 
@@ -97,6 +103,8 @@ public class RaftNode {
 
         // If RPC term is higher, update currentTerm and step down to follower
         if (args.term > currentTerm) {
+            // Clear current leader as higher term found
+            currentLeaderId = null;
             logger.log("Stepping down to follower for higher term " + args.term);
             stepDown(args.term);
         }
@@ -157,6 +165,8 @@ public class RaftNode {
 
         // Reset timeout because we heard from a valid leader
         logger.log("Resetting election timeout due to valid leader " + args.leaderId);
+        // Update current leader ID
+        currentLeaderId = args.leaderId;
         resetElectionTimeout();
         
         // If term is higher, update currentTerm
@@ -218,12 +228,31 @@ public class RaftNode {
     // makes the node a Leader 
     public synchronized void becomeLeader() {
         role = Role.LEADER;
+        // Update current leader ID
+        currentLeaderId = id;
+        int next = log.size();
         for (Integer memberId : clusterMembers.keySet()) {
             if (memberId != id) {
                 matchIndex.put(memberId, -1);
+                nextIndex.put(memberId, next);
             }
         }
+        matchIndex.put(id, log.size() - 1);
         logger.log("    Node " + id + " became leader for term " + currentTerm);
+    }
+
+    // Append a new log entry as leader and update leader's own matchIndex.
+    public synchronized int appendAsLeader(String command) {
+        if (role != Role.LEADER) {
+            throw new IllegalStateException("Only leader can append");
+        }
+
+        RaftRPC.LogEntry entry = new RaftRPC.LogEntry(currentTerm, command);
+        log.add(entry);
+
+        int lastIndex = log.size() - 1;
+        matchIndex.put(id, lastIndex);
+        return lastIndex;
     }
 
     // Reverts the node to Follower state when a higher term is encountered.
