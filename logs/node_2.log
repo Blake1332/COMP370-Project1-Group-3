@@ -1,0 +1,402 @@
+[2026-02-04 00:49:43.261] [Node-2] Server 2 started on port 9103
+[2026-02-04 00:49:46.320] [Node-2] Election timeout! Starting election for term 1
+[2026-02-04 00:49:46.321] [Node-2] Node 2 starting election for term 1
+[2026-02-04 00:49:46.321] [Node-2] Requesting votes from other nodes...
+[2026-02-04 00:49:46.346] [Node-2] Requesting vote from node 1 at port 9102
+[2026-02-04 00:49:46.424] [Node-2] Requesting vote from node 3 at port 9104
+[2026-02-04 00:49:46.428] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:49:46.456] [Node-2] Handling RequestVoteArgs from /127.0.0.1:9102
+[2026-02-04 00:49:46.464] [Node-2] Received RequestVote from Node 1 for term 1
+[2026-02-04 00:49:46.464] [Node-2] Candidate's log is up to date
+[2026-02-04 00:49:46.465] [Node-2] Vote denied to Node 1: already voted or log not up to date
+[2026-02-04 00:49:46.530] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:49:46.537] [Node-2] Handling RequestVoteResults from /127.0.0.1:9102
+[2026-02-04 00:49:46.589] [Node-2] Received packet from /127.0.0.1:9104 sent to handlePacket
+[2026-02-04 00:49:46.591] [Node-2] Handling RequestVoteResults from /127.0.0.1:9104
+[2026-02-04 00:49:47.870] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:49:47.874] [Node-2] Handling AppendEntriesArgs from /127.0.0.1:9102
+[2026-02-04 00:49:47.876] [Node-2] Resetting election timeout due to valid leader 1
+[2026-02-04 00:49:47.894] [Node-2] Received heartbeat from Leader 1 (Term: 1)
+[2026-02-04 00:49:47.894] [Node-2] AppendEntries from Leader 1 processed successfully
+[2026-02-04 00:49:49.374] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:49:49.375] [Node-2] Handling AppendEntriesArgs from /127.0.0.1:9102
+[2026-02-04 00:49:49.375] [Node-2] Resetting election timeout due to valid leader 1
+[2026-02-04 00:49:49.377] [Node-2] Received heartbeat from Leader 1 (Term: 1)
+[2026-02-04 00:49:49.377] [Node-2] AppendEntries from Leader 1 processed successfully
+[2026-02-04 00:49:50.876] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:49:50.878] [Node-2] Handling AppendEntriesArgs from /127.0.0.1:9102
+[2026-02-04 00:49:50.878] [Node-2] Resetting election timeout due to valid leader 1
+[2026-02-04 00:49:50.878] [Node-2] Received heartbeat from Leader 1 (Term: 1)
+[2026-02-04 00:49:50.878] [Node-2] AppendEntries from Leader 1 processed successfully
+[2026-02-04 00:49:52.381] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:49:52.386] [Node-2] Handling AppendEntriesArgs from /127.0.0.1:9102
+[2026-02-04 00:49:52.386] [Node-2] Resetting election timeout due to valid leader 1
+[2026-02-04 00:49:52.389] [Node-2] Received heartbeat from Leader 1 (Term: 1)
+[2026-02-04 00:49:52.391] [Node-2] AppendEntries from Leader 1 processed successfully
+[2026-02-04 00:49:53.882] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:49:53.883] [Node-2] Handling AppendEntriesArgs from /127.0.0.1:9102
+[2026-02-04 00:49:53.883] [Node-2] Resetting election timeout due to valid leader 1
+[2026-02-04 00:49:53.883] [Node-2] Received heartbeat from Leader 1 (Term: 1)
+[2026-02-04 00:49:53.883] [Node-2] AppendEntries from Leader 1 processed successfully
+[2026-02-04 00:49:55.385] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:49:55.386] [Node-2] Handling AppendEntriesArgs from /127.0.0.1:9102
+[2026-02-04 00:49:55.386] [Node-2] Resetting election timeout due to valid leader 1
+[2026-02-04 00:49:55.386] [Node-2] Received heartbeat from Leader 1 (Term: 1)
+[2026-02-04 00:49:55.387] [Node-2] AppendEntries from Leader 1 processed successfully
+[2026-02-04 00:49:56.887] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:49:56.889] [Node-2] Handling AppendEntriesArgs from /127.0.0.1:9102
+[2026-02-04 00:49:56.889] [Node-2] Resetting election timeout due to valid leader 1
+[2026-02-04 00:49:56.890] [Node-2] Received heartbeat from Leader 1 (Term: 1)
+[2026-02-04 00:49:56.890] [Node-2] AppendEntries from Leader 1 processed successfully
+[2026-02-04 00:49:58.390] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:49:58.392] [Node-2] Handling AppendEntriesArgs from /127.0.0.1:9102
+[2026-02-04 00:49:58.392] [Node-2] Resetting election timeout due to valid leader 1
+[2026-02-04 00:49:58.392] [Node-2] Received heartbeat from Leader 1 (Term: 1)
+[2026-02-04 00:49:58.393] [Node-2] AppendEntries from Leader 1 processed successfully
+[2026-02-04 00:49:59.892] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:49:59.893] [Node-2] Handling AppendEntriesArgs from /127.0.0.1:9102
+[2026-02-04 00:49:59.893] [Node-2] Resetting election timeout due to valid leader 1
+[2026-02-04 00:49:59.893] [Node-2] Received heartbeat from Leader 1 (Term: 1)
+[2026-02-04 00:49:59.893] [Node-2] AppendEntries from Leader 1 processed successfully
+[2026-02-04 00:50:01.395] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:50:01.396] [Node-2] Handling AppendEntriesArgs from /127.0.0.1:9102
+[2026-02-04 00:50:01.396] [Node-2] Resetting election timeout due to valid leader 1
+[2026-02-04 00:50:01.396] [Node-2] Received heartbeat from Leader 1 (Term: 1)
+[2026-02-04 00:50:01.397] [Node-2] AppendEntries from Leader 1 processed successfully
+[2026-02-04 00:50:02.898] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:50:02.899] [Node-2] Handling AppendEntriesArgs from /127.0.0.1:9102
+[2026-02-04 00:50:02.899] [Node-2] Resetting election timeout due to valid leader 1
+[2026-02-04 00:50:02.899] [Node-2] Received heartbeat from Leader 1 (Term: 1)
+[2026-02-04 00:50:02.899] [Node-2] AppendEntries from Leader 1 processed successfully
+[2026-02-04 00:50:04.402] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:50:04.403] [Node-2] Handling AppendEntriesArgs from /127.0.0.1:9102
+[2026-02-04 00:50:04.403] [Node-2] Resetting election timeout due to valid leader 1
+[2026-02-04 00:50:04.403] [Node-2] Received heartbeat from Leader 1 (Term: 1)
+[2026-02-04 00:50:04.404] [Node-2] AppendEntries from Leader 1 processed successfully
+[2026-02-04 00:50:05.904] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:50:05.905] [Node-2] Handling AppendEntriesArgs from /127.0.0.1:9102
+[2026-02-04 00:50:05.905] [Node-2] Resetting election timeout due to valid leader 1
+[2026-02-04 00:50:05.905] [Node-2] Received heartbeat from Leader 1 (Term: 1)
+[2026-02-04 00:50:05.905] [Node-2] AppendEntries from Leader 1 processed successfully
+[2026-02-04 00:50:07.411] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:50:07.412] [Node-2] Handling AppendEntriesArgs from /127.0.0.1:9102
+[2026-02-04 00:50:07.413] [Node-2] Resetting election timeout due to valid leader 1
+[2026-02-04 00:50:07.415] [Node-2] Received heartbeat from Leader 1 (Term: 1)
+[2026-02-04 00:50:07.416] [Node-2] AppendEntries from Leader 1 processed successfully
+[2026-02-04 00:50:08.914] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:50:08.915] [Node-2] Handling AppendEntriesArgs from /127.0.0.1:9102
+[2026-02-04 00:50:08.915] [Node-2] Resetting election timeout due to valid leader 1
+[2026-02-04 00:50:08.915] [Node-2] Received heartbeat from Leader 1 (Term: 1)
+[2026-02-04 00:50:08.915] [Node-2] AppendEntries from Leader 1 processed successfully
+[2026-02-04 00:50:10.418] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:50:10.419] [Node-2] Handling AppendEntriesArgs from /127.0.0.1:9102
+[2026-02-04 00:50:10.419] [Node-2] Resetting election timeout due to valid leader 1
+[2026-02-04 00:50:10.420] [Node-2] Received heartbeat from Leader 1 (Term: 1)
+[2026-02-04 00:50:10.420] [Node-2] AppendEntries from Leader 1 processed successfully
+[2026-02-04 00:50:11.921] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:50:11.924] [Node-2] Handling AppendEntriesArgs from /127.0.0.1:9102
+[2026-02-04 00:50:11.925] [Node-2] Resetting election timeout due to valid leader 1
+[2026-02-04 00:50:11.925] [Node-2] Received heartbeat from Leader 1 (Term: 1)
+[2026-02-04 00:50:11.925] [Node-2] AppendEntries from Leader 1 processed successfully
+[2026-02-04 00:50:13.423] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:50:13.424] [Node-2] Handling AppendEntriesArgs from /127.0.0.1:9102
+[2026-02-04 00:50:13.424] [Node-2] Resetting election timeout due to valid leader 1
+[2026-02-04 00:50:13.425] [Node-2] Received heartbeat from Leader 1 (Term: 1)
+[2026-02-04 00:50:13.425] [Node-2] AppendEntries from Leader 1 processed successfully
+[2026-02-04 00:50:14.927] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:50:14.927] [Node-2] Handling AppendEntriesArgs from /127.0.0.1:9102
+[2026-02-04 00:50:14.928] [Node-2] Resetting election timeout due to valid leader 1
+[2026-02-04 00:50:14.928] [Node-2] Received heartbeat from Leader 1 (Term: 1)
+[2026-02-04 00:50:14.928] [Node-2] AppendEntries from Leader 1 processed successfully
+[2026-02-04 00:50:16.430] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:50:16.434] [Node-2] Handling AppendEntriesArgs from /127.0.0.1:9102
+[2026-02-04 00:50:16.434] [Node-2] Resetting election timeout due to valid leader 1
+[2026-02-04 00:50:16.434] [Node-2] Received heartbeat from Leader 1 (Term: 1)
+[2026-02-04 00:50:16.434] [Node-2] AppendEntries from Leader 1 processed successfully
+[2026-02-04 00:50:17.931] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:50:17.931] [Node-2] Handling AppendEntriesArgs from /127.0.0.1:9102
+[2026-02-04 00:50:17.932] [Node-2] Resetting election timeout due to valid leader 1
+[2026-02-04 00:50:17.932] [Node-2] Received heartbeat from Leader 1 (Term: 1)
+[2026-02-04 00:50:17.932] [Node-2] AppendEntries from Leader 1 processed successfully
+[2026-02-04 00:50:19.433] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:50:19.433] [Node-2] Handling AppendEntriesArgs from /127.0.0.1:9102
+[2026-02-04 00:50:19.433] [Node-2] Resetting election timeout due to valid leader 1
+[2026-02-04 00:50:19.433] [Node-2] Received heartbeat from Leader 1 (Term: 1)
+[2026-02-04 00:50:19.434] [Node-2] AppendEntries from Leader 1 processed successfully
+[2026-02-04 00:50:20.935] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:50:20.936] [Node-2] Handling AppendEntriesArgs from /127.0.0.1:9102
+[2026-02-04 00:50:20.936] [Node-2] Resetting election timeout due to valid leader 1
+[2026-02-04 00:50:20.937] [Node-2] Received heartbeat from Leader 1 (Term: 1)
+[2026-02-04 00:50:20.937] [Node-2] AppendEntries from Leader 1 processed successfully
+[2026-02-04 00:50:22.437] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:50:22.437] [Node-2] Handling AppendEntriesArgs from /127.0.0.1:9102
+[2026-02-04 00:50:22.438] [Node-2] Resetting election timeout due to valid leader 1
+[2026-02-04 00:50:22.438] [Node-2] Received heartbeat from Leader 1 (Term: 1)
+[2026-02-04 00:50:22.438] [Node-2] AppendEntries from Leader 1 processed successfully
+[2026-02-04 00:50:23.942] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:50:23.942] [Node-2] Handling AppendEntriesArgs from /127.0.0.1:9102
+[2026-02-04 00:50:23.942] [Node-2] Resetting election timeout due to valid leader 1
+[2026-02-04 00:50:23.943] [Node-2] Received heartbeat from Leader 1 (Term: 1)
+[2026-02-04 00:50:23.943] [Node-2] AppendEntries from Leader 1 processed successfully
+[2026-02-04 00:50:38.169] [Node-2] Server 2 started on port 9103
+[2026-02-04 00:50:41.781] [Node-2] Election timeout! Starting election for term 1
+[2026-02-04 00:50:41.783] [Node-2] Node 2 starting election for term 1
+[2026-02-04 00:50:41.783] [Node-2] Requesting votes from other nodes...
+[2026-02-04 00:50:41.795] [Node-2] Requesting vote from node 1 at port 9102
+[2026-02-04 00:50:41.844] [Node-2] Requesting vote from node 3 at port 9104
+[2026-02-04 00:50:41.914] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:50:41.944] [Node-2] Handling RequestVoteArgs from /127.0.0.1:9102
+[2026-02-04 00:50:41.949] [Node-2] Received RequestVote from Node 1 for term 1
+[2026-02-04 00:50:41.949] [Node-2] Candidate's log is up to date
+[2026-02-04 00:50:41.950] [Node-2] Vote denied to Node 1: already voted or log not up to date
+[2026-02-04 00:50:41.969] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:50:41.973] [Node-2] Handling RequestVoteResults from /127.0.0.1:9102
+[2026-02-04 00:50:42.025] [Node-2] Received packet from /127.0.0.1:9104 sent to handlePacket
+[2026-02-04 00:50:42.026] [Node-2] Handling RequestVoteResults from /127.0.0.1:9104
+[2026-02-04 00:50:42.026] [Node-2] Vote received! Total votes: 2/3
+[2026-02-04 00:50:42.028] [Node-2] Majority votes received! Becoming leader for term 1
+[2026-02-04 00:50:42.029] [Node-2]     Node 2 became leader for term 1
+[2026-02-04 00:50:42.352] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:50:42.853] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:50:43.353] [Node-2] Sending heartbeats to followers...
+[2026-02-04 00:50:43.354] [Node-2] Sending heartbeat to node 1 at port 9102
+[2026-02-04 00:50:43.356] [Node-2] Sending heartbeat to node 3 at port 9104
+[2026-02-04 00:50:43.369] [Node-2] Received packet from /127.0.0.1:9104 sent to handlePacket
+[2026-02-04 00:50:43.372] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9104
+[2026-02-04 00:50:43.376] [Node-2] AppendEntries successful from node 3, updating matchIndex
+[2026-02-04 00:50:43.376] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:50:43.857] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:50:44.358] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:50:44.858] [Node-2] Sending heartbeats to followers...
+[2026-02-04 00:50:44.859] [Node-2] Sending heartbeat to node 1 at port 9102
+[2026-02-04 00:50:44.859] [Node-2] Sending heartbeat to node 3 at port 9104
+[2026-02-04 00:50:44.863] [Node-2] Received packet from /127.0.0.1:9104 sent to handlePacket
+[2026-02-04 00:50:44.863] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9104
+[2026-02-04 00:50:44.864] [Node-2] AppendEntries successful from node 3, updating matchIndex
+[2026-02-04 00:50:44.864] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:50:45.360] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:50:45.860] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:50:46.361] [Node-2] Sending heartbeats to followers...
+[2026-02-04 00:50:46.361] [Node-2] Sending heartbeat to node 1 at port 9102
+[2026-02-04 00:50:46.362] [Node-2] Sending heartbeat to node 3 at port 9104
+[2026-02-04 00:50:46.364] [Node-2] Received packet from /127.0.0.1:9104 sent to handlePacket
+[2026-02-04 00:50:46.365] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9104
+[2026-02-04 00:50:46.365] [Node-2] AppendEntries successful from node 3, updating matchIndex
+[2026-02-04 00:50:46.365] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:50:46.862] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:50:47.363] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:50:47.863] [Node-2] Sending heartbeats to followers...
+[2026-02-04 00:50:47.864] [Node-2] Sending heartbeat to node 1 at port 9102
+[2026-02-04 00:50:47.864] [Node-2] Sending heartbeat to node 3 at port 9104
+[2026-02-04 00:50:47.868] [Node-2] Received packet from /127.0.0.1:9104 sent to handlePacket
+[2026-02-04 00:50:47.868] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9104
+[2026-02-04 00:50:47.868] [Node-2] AppendEntries successful from node 3, updating matchIndex
+[2026-02-04 00:50:47.869] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:50:48.365] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:50:48.865] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:50:49.366] [Node-2] Sending heartbeats to followers...
+[2026-02-04 00:50:49.366] [Node-2] Sending heartbeat to node 1 at port 9102
+[2026-02-04 00:50:49.366] [Node-2] Sending heartbeat to node 3 at port 9104
+[2026-02-04 00:50:49.369] [Node-2] Received packet from /127.0.0.1:9104 sent to handlePacket
+[2026-02-04 00:50:49.369] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9104
+[2026-02-04 00:50:49.370] [Node-2] AppendEntries successful from node 3, updating matchIndex
+[2026-02-04 00:50:49.370] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:50:49.867] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:50:50.368] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:50:50.868] [Node-2] Sending heartbeats to followers...
+[2026-02-04 00:50:50.869] [Node-2] Sending heartbeat to node 1 at port 9102
+[2026-02-04 00:50:50.869] [Node-2] Sending heartbeat to node 3 at port 9104
+[2026-02-04 00:50:50.871] [Node-2] Received packet from /127.0.0.1:9104 sent to handlePacket
+[2026-02-04 00:50:50.871] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9104
+[2026-02-04 00:50:50.872] [Node-2] AppendEntries successful from node 3, updating matchIndex
+[2026-02-04 00:50:50.872] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:50:51.369] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:50:51.870] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:50:52.370] [Node-2] Sending heartbeats to followers...
+[2026-02-04 00:50:52.371] [Node-2] Sending heartbeat to node 1 at port 9102
+[2026-02-04 00:50:52.371] [Node-2] Sending heartbeat to node 3 at port 9104
+[2026-02-04 00:50:52.373] [Node-2] Received packet from /127.0.0.1:9104 sent to handlePacket
+[2026-02-04 00:50:52.374] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9104
+[2026-02-04 00:50:52.374] [Node-2] AppendEntries successful from node 3, updating matchIndex
+[2026-02-04 00:50:52.375] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:50:52.872] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:50:53.372] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:50:53.873] [Node-2] Sending heartbeats to followers...
+[2026-02-04 00:50:53.874] [Node-2] Sending heartbeat to node 1 at port 9102
+[2026-02-04 00:50:53.874] [Node-2] Sending heartbeat to node 3 at port 9104
+[2026-02-04 00:50:53.877] [Node-2] Received packet from /127.0.0.1:9104 sent to handlePacket
+[2026-02-04 00:50:53.878] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9104
+[2026-02-04 00:50:53.878] [Node-2] AppendEntries successful from node 3, updating matchIndex
+[2026-02-04 00:50:53.878] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:50:54.376] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:50:54.877] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:50:55.377] [Node-2] Sending heartbeats to followers...
+[2026-02-04 00:50:55.377] [Node-2] Sending heartbeat to node 1 at port 9102
+[2026-02-04 00:50:55.378] [Node-2] Sending heartbeat to node 3 at port 9104
+[2026-02-04 00:50:55.380] [Node-2] Received packet from /127.0.0.1:9104 sent to handlePacket
+[2026-02-04 00:50:55.382] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9104
+[2026-02-04 00:50:55.383] [Node-2] AppendEntries successful from node 3, updating matchIndex
+[2026-02-04 00:50:55.383] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:50:55.878] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:50:56.379] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:50:56.879] [Node-2] Sending heartbeats to followers...
+[2026-02-04 00:50:56.879] [Node-2] Sending heartbeat to node 1 at port 9102
+[2026-02-04 00:50:56.880] [Node-2] Sending heartbeat to node 3 at port 9104
+[2026-02-04 00:50:56.882] [Node-2] Received packet from /127.0.0.1:9104 sent to handlePacket
+[2026-02-04 00:50:56.882] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9104
+[2026-02-04 00:50:56.882] [Node-2] AppendEntries successful from node 3, updating matchIndex
+[2026-02-04 00:50:56.883] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:50:57.380] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:50:57.880] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:50:58.381] [Node-2] Sending heartbeats to followers...
+[2026-02-04 00:50:58.381] [Node-2] Sending heartbeat to node 1 at port 9102
+[2026-02-04 00:50:58.382] [Node-2] Sending heartbeat to node 3 at port 9104
+[2026-02-04 00:50:58.384] [Node-2] Received packet from /127.0.0.1:9104 sent to handlePacket
+[2026-02-04 00:50:58.384] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9104
+[2026-02-04 00:50:58.384] [Node-2] AppendEntries successful from node 3, updating matchIndex
+[2026-02-04 00:50:58.384] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:50:58.882] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:50:59.382] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:50:59.883] [Node-2] Sending heartbeats to followers...
+[2026-02-04 00:50:59.883] [Node-2] Sending heartbeat to node 1 at port 9102
+[2026-02-04 00:50:59.883] [Node-2] Sending heartbeat to node 3 at port 9104
+[2026-02-04 00:50:59.885] [Node-2] Received packet from /127.0.0.1:9104 sent to handlePacket
+[2026-02-04 00:50:59.886] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9104
+[2026-02-04 00:50:59.886] [Node-2] AppendEntries successful from node 3, updating matchIndex
+[2026-02-04 00:50:59.886] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:53:05.646] [Node-2] Server 2 started on port 9103
+[2026-02-04 00:53:09.708] [Node-2] Election timeout! Starting election for term 1
+[2026-02-04 00:53:09.709] [Node-2] Node 2 starting election for term 1
+[2026-02-04 00:53:09.709] [Node-2] Requesting votes from other nodes...
+[2026-02-04 00:53:09.721] [Node-2] Requesting vote from node 1 at port 9102
+[2026-02-04 00:53:09.740] [Node-2] Requesting vote from node 3 at port 9104
+[2026-02-04 00:53:09.923] [Node-2] Received packet from /127.0.0.1:9104 sent to handlePacket
+[2026-02-04 00:53:09.937] [Node-2] Handling RequestVoteArgs from /127.0.0.1:9104
+[2026-02-04 00:53:09.937] [Node-2] Received RequestVote from Node 3 for term 1
+[2026-02-04 00:53:09.941] [Node-2] Candidate's log is up to date
+[2026-02-04 00:53:09.941] [Node-2] Vote denied to Node 3: already voted or log not up to date
+[2026-02-04 00:53:09.946] [Node-2] Received packet from /127.0.0.1:9104 sent to handlePacket
+[2026-02-04 00:53:09.949] [Node-2] Handling RequestVoteResults from /127.0.0.1:9104
+[2026-02-04 00:53:09.949] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:53:09.950] [Node-2] Handling RequestVoteResults from /127.0.0.1:9102
+[2026-02-04 00:53:09.950] [Node-2] Vote received! Total votes: 2/3
+[2026-02-04 00:53:09.954] [Node-2] Majority votes received! Becoming leader for term 1
+[2026-02-04 00:53:09.954] [Node-2]     Node 2 became leader for term 1
+[2026-02-04 00:53:10.241] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:53:10.741] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:53:11.242] [Node-2] Sending heartbeats to followers...
+[2026-02-04 00:53:11.243] [Node-2] Sending heartbeat to node 1 at port 9102
+[2026-02-04 00:53:11.246] [Node-2] Sending heartbeat to node 3 at port 9104
+[2026-02-04 00:53:11.271] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:53:11.280] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9102
+[2026-02-04 00:53:11.281] [Node-2] AppendEntries successful from node 1, updating matchIndex
+[2026-02-04 00:53:11.281] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:53:11.284] [Node-2] Received packet from /127.0.0.1:9104 sent to handlePacket
+[2026-02-04 00:53:11.284] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9104
+[2026-02-04 00:53:11.284] [Node-2] AppendEntries successful from node 3, updating matchIndex
+[2026-02-04 00:53:11.285] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:53:11.753] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:53:12.254] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:53:12.754] [Node-2] Sending heartbeats to followers...
+[2026-02-04 00:53:12.755] [Node-2] Sending heartbeat to node 1 at port 9102
+[2026-02-04 00:53:12.756] [Node-2] Sending heartbeat to node 3 at port 9104
+[2026-02-04 00:53:12.758] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:53:12.759] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9102
+[2026-02-04 00:53:12.759] [Node-2] AppendEntries successful from node 1, updating matchIndex
+[2026-02-04 00:53:12.760] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:53:12.760] [Node-2] Received packet from /127.0.0.1:9104 sent to handlePacket
+[2026-02-04 00:53:12.761] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9104
+[2026-02-04 00:53:12.761] [Node-2] AppendEntries successful from node 3, updating matchIndex
+[2026-02-04 00:53:12.762] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:53:13.256] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:53:13.757] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:53:14.257] [Node-2] Sending heartbeats to followers...
+[2026-02-04 00:53:14.258] [Node-2] Sending heartbeat to node 1 at port 9102
+[2026-02-04 00:53:14.258] [Node-2] Sending heartbeat to node 3 at port 9104
+[2026-02-04 00:53:14.261] [Node-2] Received packet from /127.0.0.1:9104 sent to handlePacket
+[2026-02-04 00:53:14.262] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9104
+[2026-02-04 00:53:14.262] [Node-2] AppendEntries successful from node 3, updating matchIndex
+[2026-02-04 00:53:14.262] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:53:14.262] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:53:14.263] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9102
+[2026-02-04 00:53:14.263] [Node-2] AppendEntries successful from node 1, updating matchIndex
+[2026-02-04 00:53:14.263] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:53:14.759] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:53:15.259] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:53:15.760] [Node-2] Sending heartbeats to followers...
+[2026-02-04 00:53:15.760] [Node-2] Sending heartbeat to node 1 at port 9102
+[2026-02-04 00:53:15.760] [Node-2] Sending heartbeat to node 3 at port 9104
+[2026-02-04 00:53:15.763] [Node-2] Received packet from /127.0.0.1:9104 sent to handlePacket
+[2026-02-04 00:53:15.764] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9104
+[2026-02-04 00:53:15.764] [Node-2] AppendEntries successful from node 3, updating matchIndex
+[2026-02-04 00:53:15.764] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:53:15.768] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:53:15.768] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9102
+[2026-02-04 00:53:15.768] [Node-2] AppendEntries successful from node 1, updating matchIndex
+[2026-02-04 00:53:15.769] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:53:16.263] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:53:16.763] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:53:17.264] [Node-2] Sending heartbeats to followers...
+[2026-02-04 00:53:17.264] [Node-2] Sending heartbeat to node 1 at port 9102
+[2026-02-04 00:53:17.264] [Node-2] Sending heartbeat to node 3 at port 9104
+[2026-02-04 00:53:17.270] [Node-2] Received packet from /127.0.0.1:9104 sent to handlePacket
+[2026-02-04 00:53:17.271] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9104
+[2026-02-04 00:53:17.271] [Node-2] AppendEntries successful from node 3, updating matchIndex
+[2026-02-04 00:53:17.272] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:53:17.272] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:53:17.272] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9102
+[2026-02-04 00:53:17.273] [Node-2] AppendEntries successful from node 1, updating matchIndex
+[2026-02-04 00:53:17.273] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:53:17.765] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:53:18.266] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:53:18.766] [Node-2] Sending heartbeats to followers...
+[2026-02-04 00:53:18.767] [Node-2] Sending heartbeat to node 1 at port 9102
+[2026-02-04 00:53:18.768] [Node-2] Sending heartbeat to node 3 at port 9104
+[2026-02-04 00:53:18.776] [Node-2] Received packet from /127.0.0.1:9104 sent to handlePacket
+[2026-02-04 00:53:18.776] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9104
+[2026-02-04 00:53:18.776] [Node-2] AppendEntries successful from node 3, updating matchIndex
+[2026-02-04 00:53:18.776] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:53:18.777] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:53:18.777] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9102
+[2026-02-04 00:53:18.777] [Node-2] AppendEntries successful from node 1, updating matchIndex
+[2026-02-04 00:53:18.777] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:53:19.268] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:53:19.769] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:53:20.270] [Node-2] Sending heartbeats to followers...
+[2026-02-04 00:53:20.270] [Node-2] Sending heartbeat to node 1 at port 9102
+[2026-02-04 00:53:20.270] [Node-2] Sending heartbeat to node 3 at port 9104
+[2026-02-04 00:53:20.273] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:53:20.273] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9102
+[2026-02-04 00:53:20.274] [Node-2] AppendEntries successful from node 1, updating matchIndex
+[2026-02-04 00:53:20.275] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:53:20.277] [Node-2] Received packet from /127.0.0.1:9104 sent to handlePacket
+[2026-02-04 00:53:20.277] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9104
+[2026-02-04 00:53:20.277] [Node-2] AppendEntries successful from node 3, updating matchIndex
+[2026-02-04 00:53:20.277] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:53:20.773] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:53:21.273] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:53:21.774] [Node-2] Sending heartbeats to followers...
+[2026-02-04 00:53:21.774] [Node-2] Sending heartbeat to node 1 at port 9102
+[2026-02-04 00:53:21.774] [Node-2] Sending heartbeat to node 3 at port 9104
+[2026-02-04 00:53:21.778] [Node-2] Received packet from /127.0.0.1:9104 sent to handlePacket
+[2026-02-04 00:53:21.778] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9104
+[2026-02-04 00:53:21.779] [Node-2] AppendEntries successful from node 3, updating matchIndex
+[2026-02-04 00:53:21.779] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:53:21.779] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:53:21.779] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9102
+[2026-02-04 00:53:21.779] [Node-2] AppendEntries successful from node 1, updating matchIndex
+[2026-02-04 00:53:21.780] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:53:22.276] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:53:22.777] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
+[2026-02-04 00:53:23.277] [Node-2] Sending heartbeats to followers...
+[2026-02-04 00:53:23.278] [Node-2] Sending heartbeat to node 1 at port 9102
+[2026-02-04 00:53:23.279] [Node-2] Sending heartbeat to node 3 at port 9104
+[2026-02-04 00:53:23.283] [Node-2] Received packet from /127.0.0.1:9102 sent to handlePacket
+[2026-02-04 00:53:23.285] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9102
+[2026-02-04 00:53:23.285] [Node-2] AppendEntries successful from node 1, updating matchIndex
+[2026-02-04 00:53:23.285] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:53:23.285] [Node-2] Received packet from /127.0.0.1:9104 sent to handlePacket
+[2026-02-04 00:53:23.286] [Node-2] Handling AppendEntriesResults from /127.0.0.1:9104
+[2026-02-04 00:53:23.286] [Node-2] AppendEntries successful from node 3, updating matchIndex
+[2026-02-04 00:53:23.286] [Node-2] Checking commit index: 3 nodes have replicated index -1
+[2026-02-04 00:53:23.780] [Node-2] Less than 1500ms since last heartbeat, skipping heartbeat send
