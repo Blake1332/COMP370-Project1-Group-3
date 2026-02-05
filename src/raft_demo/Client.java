@@ -1,0 +1,187 @@
+package raft_demo;
+
+import java.io.*;
+import java.net.*;
+import java.util.*;
+
+/**
+ * Client for the Raft cluster.
+ * Discovers the leader and sends requests.
+ */
+
+public class Client {
+    private final Map<Integer, Integer> clusterMembers;
+    private Integer currentLeaderId;
+    
+    public Client(Map<Integer, Integer> clusterMembers) {
+        this.clusterMembers = clusterMembers;
+    }
+
+
+    // Logger for client activities
+    private static final Logger logger;
+
+    static {
+        try {
+            logger = new Logger("CLIENT", "logs/client.log");
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to initialize logger", e);
+        }
+    }
+
+    // Discovers the current leader by querying all cluster members
+    public boolean discoverLeader() {
+        logger.log("Discovering leader...");
+        
+        // Query each member for the leader
+        for (Map.Entry<Integer, Integer> member : clusterMembers.entrySet()) {
+            try {
+                Integer leaderId = queryNodeForLeader(member.getValue());
+                if (leaderId != null) {
+                    currentLeaderId = leaderId;
+                    logger.log("Found leader: Node " + leaderId);
+                    return true;
+                }
+            } catch (Exception e) {
+                // Try next node
+                logger.log("ERROR: " + e.getMessage());
+            }
+        }
+        
+        logger.log("No leader found");
+        return false;
+    }
+    
+    // Helper query to get the leader from a node
+    private Integer queryNodeForLeader(int port) throws Exception {
+        try (Socket socket = new Socket("localhost", port)) {
+            socket.setSoTimeout(2000);
+            
+            ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
+            ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
+            
+            logger.log("    Querying node at port " + port + " for leader");
+            ClientRequest request = new ClientRequest(ClientRequest.RequestType.GET_LEADER, null);
+            out.writeObject(request);
+            out.flush();
+            
+            // Get response
+            ClientResponse response = (ClientResponse) in.readObject();
+            logger.log("    Received leader response: " + response.leaderId);
+            return response.leaderId;
+        }
+    }
+
+    // Sends a request to the current leader
+    public String sendRequest(String command) {
+        // Discover leader if we don't know who it is
+        if (currentLeaderId == null && !discoverLeader()) {
+            return "ERROR: No leader available";
+        }
+        
+        try {
+
+            // Send request to leader's port
+            int port = clusterMembers.get(currentLeaderId);
+            logger.log("    Sending request to leader at port " + port);
+            
+            try (Socket socket = new Socket("localhost", port)) {
+                socket.setSoTimeout(5000);
+                
+                ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
+                ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
+                
+                // Send PROCESS_JOB request with command
+                ClientRequest request = new ClientRequest(ClientRequest.RequestType.PROCESS_JOB, command);
+                out.writeObject(request);
+                out.flush();
+                
+                // Get response
+                ClientResponse response = (ClientResponse) in.readObject();
+                
+                if (!response.success && response.message.startsWith("NOT_LEADER")) {
+                    // Leader changed, rediscover and retry
+                    currentLeaderId = null;
+                    return sendRequest(command);
+                }
+                
+                return response.message;
+            }
+        } catch (Exception e) {
+            // Leader might have failed, set currentLeaderId to null to rediscover next time
+            currentLeaderId = null;
+            return "ERROR: " + e.getMessage();
+        }
+    }
+    
+
+    // Request message sent from client to server
+
+    public static class ClientRequest implements Serializable {
+        public enum RequestType { PROCESS_JOB, GET_LEADER }
+        
+        public RequestType type;
+        public String command;
+        
+        public ClientRequest(RequestType type, String command) {
+            this.type = type;
+            this.command = command;
+        }
+    }
+    
+
+    //Response message sent from server to client
+
+    public static class ClientResponse implements Serializable {
+        public boolean success;
+        public String message;
+        public Integer leaderId;
+        
+        public ClientResponse(boolean success, String message, Integer leaderId) {
+            this.success = success;
+            this.message = message;
+            this.leaderId = leaderId;
+        }
+    }
+    
+    // Main method for testing the client
+    public static void main(String[] args) throws Exception {
+        // Define cluster members and their ports for the client to know where to find the servers
+        Map<Integer, Integer> members = new HashMap<>();
+        members.put(1, 8102);  
+        members.put(2, 8103);
+        members.put(3, 8104);
+        
+        Client client = new Client(members);
+        
+        // Interactive mode
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        logger.log("Raft Client Started.");
+        System.out.println("Give any input to send to PROCESS_JOB command, or type QUIT to exit:");
+        
+        while (true) {
+            System.out.println("> ");
+            String input = reader.readLine();
+            
+            if (input == null || input.equalsIgnoreCase("QUIT")) {
+                break;
+            }
+            
+            if (input.trim().isEmpty()) {
+                continue;
+            }
+
+            logger.log("Received input, other than QUIT: " + input);
+            // Send request to leader and receive response
+            String response = client.sendRequest(input);
+            logger.log("Response from leader: " + response);
+        }
+        
+        // If input is QUIT, exit and close logger
+        logger.log("Client shut down.");
+        reader.close();
+        logger.close();
+    }
+}
+
+

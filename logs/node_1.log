@@ -1,0 +1,598 @@
+[2026-02-04 18:38:54.509] [Node-1] Server 1 started on port 9102, client port 8102
+[2026-02-04 18:38:57.647] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:38:57.707] [Node-1] Handling RequestVoteArgs from /127.0.0.1:9103
+[2026-02-04 18:38:57.723] [Node-1] Received RequestVote from Node 2 for term 1
+[2026-02-04 18:38:57.726] [Node-1] Stepping down to follower for higher term 1
+[2026-02-04 18:38:57.726] [Node-1]     Node 1 stepping down to follower for term 1
+[2026-02-04 18:38:57.729] [Node-1] Candidate's log is up to date
+[2026-02-04 18:38:57.730] [Node-1] Vote granted to Node 2 for term 1
+[2026-02-04 18:38:59.047] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:38:59.052] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:38:59.052] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:38:59.069] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:38:59.071] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:00.552] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:00.554] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:00.555] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:00.555] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:00.557] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:02.056] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:02.057] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:02.057] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:02.059] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:02.059] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:03.559] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:03.559] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:03.559] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:03.560] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:03.560] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:05.065] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:05.066] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:05.066] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:05.066] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:05.067] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:06.566] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:06.566] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:06.567] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:06.567] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:06.567] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:08.069] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:08.070] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:08.071] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:08.074] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:08.074] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:09.571] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:09.572] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:09.572] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:09.573] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:09.573] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:11.076] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:11.077] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:11.077] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:11.077] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:11.078] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:12.580] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:12.580] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:12.581] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:12.581] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:12.581] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:14.081] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:14.082] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:14.083] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:14.084] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:14.085] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:15.584] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:15.586] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:15.588] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:15.589] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:15.590] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:17.086] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:17.088] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:17.088] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:17.088] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:17.089] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:18.589] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:18.590] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:18.590] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:18.590] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:18.590] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:20.093] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:20.094] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:20.094] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:20.094] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:20.094] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:21.595] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:21.596] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:21.596] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:21.596] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:21.596] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:23.097] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:23.097] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:23.098] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:23.098] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:23.099] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:24.602] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:24.605] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:24.605] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:24.605] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:24.606] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:26.105] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:26.106] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:26.107] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:26.107] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:26.108] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:27.607] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:27.608] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:27.608] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:27.608] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:27.608] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:29.110] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:29.110] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:29.110] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:29.111] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:29.113] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:30.611] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:30.612] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:30.612] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:30.612] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:30.612] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:32.113] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:32.114] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:32.115] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:32.115] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:32.115] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:33.615] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:33.616] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:33.616] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:33.616] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:33.616] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:35.117] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:35.120] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:35.120] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:35.120] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:35.120] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:36.618] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:36.620] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:36.620] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:36.620] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:36.621] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:38.122] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:38.123] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:38.123] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:38.123] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:38.124] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:39.624] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:39.625] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:39.625] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:39.625] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:39.625] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:41.126] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:41.127] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:41.127] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:41.127] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:41.127] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:42.630] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:42.631] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:42.633] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:42.633] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:42.633] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:44.131] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:44.131] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:44.134] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:44.135] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:44.136] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:45.634] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:45.635] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:45.635] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:45.636] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:45.637] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:47.136] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:47.137] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:47.137] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:47.139] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:47.140] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:48.637] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:48.638] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:48.638] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:48.638] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:48.638] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:50.141] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:50.141] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:50.141] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:50.142] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:50.143] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:51.642] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:51.643] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:51.643] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:51.643] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:51.643] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:53.144] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:53.145] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:53.145] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:53.146] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:53.147] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:54.645] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:54.646] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:54.646] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:54.646] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:54.646] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:56.147] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:56.148] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:56.148] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:56.148] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:56.148] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:57.649] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:57.649] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:57.649] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:57.650] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:57.650] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:39:59.154] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:39:59.155] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:39:59.158] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:39:59.158] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:39:59.158] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:00.658] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:00.658] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:00.659] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:00.659] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:00.659] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:02.160] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:02.160] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:02.161] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:02.161] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:02.161] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:03.662] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:03.663] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:03.663] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:03.663] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:03.664] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:05.163] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:05.165] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:05.166] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:05.168] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:05.168] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:06.666] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:06.666] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:06.666] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:06.667] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:06.667] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:07.878] [Node-1] Client connected from /127.0.0.1:55624
+[2026-02-04 18:40:07.963] [Node-1] Received client request: GET_LEADER
+[2026-02-04 18:40:07.963] [Node-1] Responding with leader ID: 2
+[2026-02-04 18:40:07.968] [Node-1] Client connection handled and closed
+[2026-02-04 18:40:08.195] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:08.204] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:08.204] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:08.205] [Node-1] Appending 1 entries from Leader 2
+[2026-02-04 18:40:08.206] [Node-1]     Processing log entry at index 0 with term 1
+[2026-02-04 18:40:08.207] [Node-1]     No conflict at index 0. Appending entry.
+[2026-02-04 18:40:08.207] [Node-1]     Log size is now 1
+[2026-02-04 18:40:08.208] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:09.694] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:09.695] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:09.695] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:09.695] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:09.695] [Node-1] Updated commitIndex to 0
+[2026-02-04 18:40:09.696] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:10.104] [Node-1] Applied to State Machine: test at index 0
+[2026-02-04 18:40:11.195] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:11.196] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:11.196] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:11.196] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:11.196] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:12.697] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:12.698] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:12.698] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:12.698] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:12.698] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:14.198] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:14.199] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:14.199] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:14.199] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:14.199] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:15.699] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:15.700] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:15.700] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:15.700] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:15.700] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:17.202] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:17.202] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:17.202] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:17.202] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:17.202] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:18.703] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:18.704] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:18.704] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:18.704] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:18.704] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:20.205] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:20.205] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:20.205] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:20.205] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:20.205] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:21.707] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:21.707] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:21.707] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:21.707] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:21.708] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:23.209] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:23.210] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:23.212] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:23.212] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:23.212] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:24.710] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:24.711] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:24.711] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:24.712] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:24.712] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:26.214] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:26.214] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:26.214] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:26.215] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:26.215] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:27.715] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:27.716] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:27.716] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:27.716] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:27.716] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:29.218] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:29.219] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:29.219] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:29.219] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:29.219] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:30.723] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:30.723] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:30.723] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:30.723] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:30.723] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:32.221] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:32.221] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:32.221] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:32.222] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:32.222] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:33.723] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:33.724] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:33.724] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:33.725] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:33.725] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:35.223] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:35.228] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:35.228] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:35.229] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:35.229] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:36.725] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:36.726] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:36.726] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:36.726] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:36.726] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:38.226] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:38.226] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:38.226] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:38.226] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:38.227] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:39.731] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:39.732] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:39.732] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:39.732] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:39.732] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:41.234] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:41.235] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:41.235] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:41.235] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:41.235] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:42.734] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:42.734] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:42.734] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:42.734] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:42.735] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:44.237] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:44.237] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:44.238] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:44.238] [Node-1] Appending 1 entries from Leader 2
+[2026-02-04 18:40:44.238] [Node-1]     Processing log entry at index 1 with term 1
+[2026-02-04 18:40:44.238] [Node-1]     No conflict at index 1. Appending entry.
+[2026-02-04 18:40:44.238] [Node-1]     Log size is now 2
+[2026-02-04 18:40:44.238] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:45.738] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:45.738] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:45.738] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:45.738] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:45.738] [Node-1] Updated commitIndex to 1
+[2026-02-04 18:40:45.739] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:46.125] [Node-1] Applied to State Machine: test at index 1
+[2026-02-04 18:40:47.239] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:47.239] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:47.239] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:47.241] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:47.242] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:48.740] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:48.741] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:48.741] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:48.741] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:48.741] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:50.241] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:50.242] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:50.242] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:50.242] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:50.242] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:51.742] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:51.743] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:51.743] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:51.743] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:51.743] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:53.243] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:53.244] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:53.244] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:53.244] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:53.244] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:54.744] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:54.745] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:54.746] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:54.746] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:54.746] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:56.245] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:56.246] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:56.246] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:56.246] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:56.246] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:57.749] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:57.749] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:57.749] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:57.749] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:57.749] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:40:59.250] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:40:59.251] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:40:59.251] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:40:59.251] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:40:59.251] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:00.749] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:00.750] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:00.750] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:00.750] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:00.750] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:02.250] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:02.251] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:02.251] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:02.251] [Node-1] Appending 1 entries from Leader 2
+[2026-02-04 18:41:02.251] [Node-1]     Processing log entry at index 2 with term 1
+[2026-02-04 18:41:02.251] [Node-1]     No conflict at index 2. Appending entry.
+[2026-02-04 18:41:02.252] [Node-1]     Log size is now 3
+[2026-02-04 18:41:02.253] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:03.753] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:03.753] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:03.753] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:03.753] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:03.754] [Node-1] Updated commitIndex to 2
+[2026-02-04 18:41:03.754] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:04.129] [Node-1] Applied to State Machine: test at index 2
+[2026-02-04 18:41:05.254] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:05.255] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:05.255] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:05.256] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:05.256] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:06.756] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:06.757] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:06.757] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:06.757] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:06.757] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:08.258] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:08.259] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:08.259] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:08.259] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:08.259] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:09.760] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:09.760] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:09.760] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:09.761] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:09.761] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:11.261] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:11.261] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:11.263] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:11.263] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:11.264] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:12.761] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:12.762] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:12.762] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:12.762] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:12.762] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:14.264] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:14.264] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:14.265] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:14.265] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:14.265] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:15.764] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:15.765] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:15.765] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:15.765] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:15.765] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:17.265] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:17.266] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:17.266] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:17.267] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:17.267] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:18.767] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:18.767] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:18.767] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:18.768] [Node-1] Appending 1 entries from Leader 2
+[2026-02-04 18:41:18.768] [Node-1]     Processing log entry at index 3 with term 1
+[2026-02-04 18:41:18.768] [Node-1]     No conflict at index 3. Appending entry.
+[2026-02-04 18:41:18.768] [Node-1]     Log size is now 4
+[2026-02-04 18:41:18.768] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:20.268] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:20.268] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:20.269] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:20.269] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:20.269] [Node-1] Updated commitIndex to 3
+[2026-02-04 18:41:20.269] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:20.632] [Node-1] Applied to State Machine: test at index 3
+[2026-02-04 18:41:21.771] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:21.771] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:21.771] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:21.771] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:21.771] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:23.270] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:23.271] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:23.271] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:23.271] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:23.271] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:24.772] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:24.773] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:24.775] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:24.776] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:24.778] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:26.273] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:26.274] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:26.274] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:26.274] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:26.275] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:27.776] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:27.776] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:27.776] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:27.776] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:27.776] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:29.277] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:29.279] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:29.279] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:29.279] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:29.280] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:30.777] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:30.778] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:30.778] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:30.778] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:30.778] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:32.280] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:32.281] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:32.281] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:32.281] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:32.282] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:33.781] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:33.783] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:33.783] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:33.783] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:33.784] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:35.285] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:35.285] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:35.285] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:35.286] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:35.286] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:36.786] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:36.787] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:36.787] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:36.787] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:36.787] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:38.287] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:38.288] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:38.288] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:38.288] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:38.289] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:39.789] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:39.789] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:39.790] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:39.790] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:39.790] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:41.293] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:41.293] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:41.293] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:41.293] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:41.293] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:42.794] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:42.794] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:42.794] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:42.794] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:42.795] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:44.296] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:44.296] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:44.297] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:44.297] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:44.297] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:45.797] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:45.799] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:45.799] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:45.799] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:45.799] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:47.298] [Node-1] Received packet from /127.0.0.1:9103 sent to handlePacket
+[2026-02-04 18:41:47.299] [Node-1] Handling AppendEntriesArgs from /127.0.0.1:9103
+[2026-02-04 18:41:47.299] [Node-1] Resetting election timeout due to valid leader 2
+[2026-02-04 18:41:47.299] [Node-1] Received heartbeat from Leader 2 (Term: 1)
+[2026-02-04 18:41:47.299] [Node-1] AppendEntries from Leader 2 processed successfully
+[2026-02-04 18:41:47.390] [Node-1] Shutting down server 1
