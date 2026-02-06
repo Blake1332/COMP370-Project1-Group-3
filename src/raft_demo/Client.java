@@ -12,6 +12,7 @@ import java.util.*;
 public class Client {
     private final Map<Integer, Integer> clusterMembers;
     private Integer currentLeaderId;
+    public Integer getCurrentLeaderId() { return currentLeaderId; }
     
     public Client(Map<Integer, Integer> clusterMembers) {
         this.clusterMembers = clusterMembers;
