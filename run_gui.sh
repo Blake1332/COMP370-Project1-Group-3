@@ -13,16 +13,5 @@ if ! command -v java &> /dev/null; then
     exit 1
 fi
 
-# Compile
-echo "Compiling source files..."
-javac -d bin src/raft_demo/*.java
-
-if [ $? -ne 0 ]; then
-    echo "[ERROR] Compilation failed."
-    exit $?
-fi
-
-echo "Compilation successful."
-echo "=========================================="
 echo "Launching GUI..."
 java -cp bin raft_demo.GUI

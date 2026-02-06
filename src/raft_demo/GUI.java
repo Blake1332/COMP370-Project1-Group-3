@@ -109,22 +109,28 @@ public class GUI extends JFrame {
 
     //STOPING AND STARTING BUTTON FUNCTIONS
     //--------------------------------------------------------------------------------
-    private void startNode(int id) {
-        try {
-            Process proc = new ProcessBuilder("java", "-cp", "bin", "raft_demo.RaftServer", String.valueOf(id))
-                .redirectErrorStream(true).redirectOutput(ProcessBuilder.Redirect.DISCARD).start();
-            nodeProcesses[id - 1] = proc;
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
 
     private void onStartCluster() {
         startClusterBtn.setEnabled(false);
+        appendOutput("Compiling...\n");
         new Thread(() -> {
-            compileProject();
+            boolean compiled = compileProject();
+            if (!compiled) {
+                SwingUtilities.invokeLater(() -> {
+                    appendOutput("Compilation failed.\n");
+                    startClusterBtn.setEnabled(true);
+                });
+                return;
+            }
+            SwingUtilities.invokeLater(() -> appendOutput("Compilation successful.\n"));
             startNode(1); startNode(2); startNode(3);
-            SwingUtilities.invokeLater(() -> { stopClusterBtn.setEnabled(true); appendOutput("Cluster started.\n"); });
+            SwingUtilities.invokeLater(() -> {
+                appendOutput("Node 1 started.\n");
+                appendOutput("Node 2 started.\n");
+                appendOutput("Node 3 started.\n");
+                appendOutput("Cluster started successfully.\n");
+                stopClusterBtn.setEnabled(true);
+            });
         }).start();
     }
 
@@ -157,19 +163,24 @@ public class GUI extends JFrame {
         if (nodeProcesses[2] != null) { nodeProcesses[2].destroyForcibly(); nodeProcesses[2] = null; }
         appendOutput("All nodes destroyed.\n");
     }
-    //--------------------------------------------------------------------------------
 
-
+    private void startNode(int id) {
+        try {
+            Process proc = new ProcessBuilder("java", "-cp", "bin", "raft_demo.RaftServer", String.valueOf(id))
+                .redirectErrorStream(true).redirectOutput(ProcessBuilder.Redirect.DISCARD).start();
+            nodeProcesses[id - 1] = proc;
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
     private boolean compileProject() {
         new File("bin").mkdirs();
-
         javax.tools.JavaCompiler compiler = javax.tools.ToolProvider.getSystemJavaCompiler();
         if (compiler == null) {
-            appendOutput("Error Java not found. Make sure Java is installed.\n");
+            appendOutput("Error: Java compiler not found.\n");
             return false;
         }
-
-        int commands_to_run = compiler.run(null, null, null,
+        int result = compiler.run(null, null, null,
             "-d", "bin",
             "src/raft_demo/RaftServer.java",
             "src/raft_demo/RaftNode.java",
@@ -178,9 +189,10 @@ public class GUI extends JFrame {
             "src/raft_demo/Logger.java",
             "src/raft_demo/GUI.java"
         );
-        return commands_to_run == 0; //note this means if the commands ran successfully, we return true(zero) not that it failed(one)
+        return result == 0;
     }
-     //--------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------------
+    
     //CLIENT
     private void onConnectClient() {
         //PORTS (change later if figured out how to do dynamic ports)
