@@ -14,4 +14,10 @@ if ! command -v java &> /dev/null; then
 fi
 
 echo "Launching GUI..."
+# Compile the project before running
+javac -d bin src/raft_demo/*.java
+if [ $? -ne 0 ]; then
+    echo "[ERROR] Compilation failed."
+    exit 1
+fi
 java -cp bin raft_demo.GUI

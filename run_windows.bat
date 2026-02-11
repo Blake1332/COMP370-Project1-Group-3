@@ -17,4 +17,11 @@ if %errorlevel% == 1 (
 )
 
 echo Launching GUI...
+:: Compile the project before running
+javac -d bin src/raft_demo/*.java
+if %errorlevel% neq 0 (
+    echo [ERROR] Compilation failed.
+    pause
+    exit /b 1
+)
 java -cp bin raft_demo.GUI
