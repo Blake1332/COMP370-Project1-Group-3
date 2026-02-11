@@ -1,0 +1,26 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#EAF4FF", "primaryTextColor": "#0F172A", "primaryBorderColor": "#1E3A8A", "lineColor": "#334155", "secondaryColor": "#FFF7E6", "tertiaryColor": "#F8FAFC", "fontFamily": "Trebuchet MS"}}}%%
+sequenceDiagram
+    autonumber
+    participant C as Client
+    participant P as Old Primary
+    participant B1 as Backup Candidate
+    participant B2 as Backup Candidate
+
+    C->>P: PROCESS_JOB(command)
+    Note over P: Primary crashes / unreachable
+    P--x C: timeout / connection error
+
+    B1->>B1: election timeout
+    B1->>B2: RequestVoteArgs(...)
+    B2-->>B1: voteGranted=true
+    B1->>B1: becomeLeader()
+    Note over B1: becomes new leader
+
+    C->>C: clear cached leader
+    C->>B1: GET_LEADER
+    B1-->>C: leaderId = B1
+
+    C->>B1: PROCESS_JOB(retry)
+    B1->>B2: AppendEntriesArgs(entries)
+    B2-->>B1: AppendEntriesResults(success)
+    B1-->>C: success=true
