@@ -9,13 +9,15 @@ import java.util.*;
 public class GUI extends JFrame {
 
     private Process[] nodeProcesses = new Process[3];
+    private JButton[] nodeKillButtons = new JButton[3];
     private JButton startClusterBtn, stopClusterBtn, connectClientBtn, sendBtn, resetBtn;
     private JTextField commandField;
-    private JLabel leaderLabel;
     private JTextArea outputArea;
     private Client client;
     private String currentLogFile = null;
     private javax.swing.Timer logRefreshTimer;
+
+    private String lastKnownLeader = "unknown"; //NOTE THIS IS JUST USED FOR THE GUI, NOT THE LOGIC
 
     //--------------------------------------------------------------------------------
     public GUI() {
@@ -39,7 +41,7 @@ public class GUI extends JFrame {
 
     private void buildUI() {
         setLayout(new BorderLayout(5, 5));
-        JPanel buttons_jframe = new JPanel(new GridLayout(3, 1));
+        JPanel buttons_jframe = new JPanel(new GridLayout(4, 1));
 
         // START AND STOP BUTTONS
         JPanel row1 = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -66,6 +68,30 @@ public class GUI extends JFrame {
         // REFRESH THE LOGS CHANGE DELAY IF NEEDED
         logRefreshTimer = new javax.swing.Timer(2000, e -> {
             if (currentLogFile != null) readLog(currentLogFile);
+            // REFRESH LEADER STATUS IF CLIENT IS CONNECTED
+            if (client != null) {
+                new Thread(() -> {
+                    boolean found = client.discoverLeader();
+                    SwingUtilities.invokeLater(() -> {
+                        if (found) {
+                            String newLeader = getLeaderId(client);
+                            if (!newLeader.equals(lastKnownLeader)) {
+                                if (lastKnownLeader.equals("unknown")) {
+                                    appendOutput("Connected to new Leader who is node " + newLeader + "\n");
+                                } else {
+                                    appendOutput("Leader changed from node " + lastKnownLeader + " to node " + newLeader + "\n");
+                                }
+                                lastKnownLeader = newLeader;
+                            }
+                        } else {
+                            if (!lastKnownLeader.equals("unknown")) {
+                                appendOutput("Leader lost. Trying to find new leader");
+                                lastKnownLeader = "unknown";
+                            }
+                        }
+                    });
+                }).start();
+            }
         });
 
         row1.add(new JButton("Clear Output") {{
@@ -85,7 +111,6 @@ public class GUI extends JFrame {
         // CONNECT AND CURRENT LEADER BUTTONS
         JPanel row2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
         row2.add(connectClientBtn = new JButton("Connect to Cluster"));
-        row2.add(leaderLabel = new JLabel("Leader: unknown"));
         connectClientBtn.addActionListener(e -> onConnectClient());
         buttons_jframe.add(row2);
 
@@ -99,12 +124,43 @@ public class GUI extends JFrame {
         sendBtn.addActionListener(e -> onSendCommand());
         buttons_jframe.add(row3);
 
+        // NODE FAILURE SIMULATION
+        JPanel row4 = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        for (int i = 1; i <= 3; i++) {
+            int id = i;
+            JButton killBtn = new JButton("Kill Node " + id);
+            killBtn.setEnabled(false);
+            killBtn.addActionListener(e -> onKillNode(id, killBtn));
+            nodeKillButtons[id - 1] = killBtn;
+            row4.add(killBtn);
+        }
+        buttons_jframe.add(row4);
+
         add(buttons_jframe, BorderLayout.NORTH);
 
         // OUTPUT
         outputArea = new JTextArea();
         outputArea.setEditable(false);
         add(new JScrollPane(outputArea), BorderLayout.CENTER);
+    }
+    //KILLING NODES
+    private void onKillNode(int id, JButton btn) {
+        if (nodeProcesses[id - 1] != null) {
+            nodeProcesses[id - 1].destroyForcibly();
+            nodeProcesses[id - 1] = null;
+            appendOutput("Node " + id + " killed manually.\n");
+            btn.setText("Restart Node " + id);
+            
+            // If the killed node was the leader, log it
+            if (lastKnownLeader.equals(String.valueOf(id))) {
+                appendOutput("Current Leader (Node " + id + ") was killed.\n");
+                lastKnownLeader = "unknown";
+            }
+        } else {
+            startNode(id);
+            appendOutput("Node " + id + " restarted manually.\n");
+            btn.setText("Kill Node " + id);
+        }
     }
 
     //STOPING AND STARTING BUTTON FUNCTIONS
@@ -130,6 +186,10 @@ public class GUI extends JFrame {
                 appendOutput("Node 3 started.\n");
                 appendOutput("Cluster started successfully.\n");
                 stopClusterBtn.setEnabled(true);
+                for (JButton btn : nodeKillButtons) {
+                    btn.setEnabled(true);
+                    btn.setText("Kill Node " + (Arrays.asList(nodeKillButtons).indexOf(btn) + 1));
+                }
             });
         }).start();
     }
@@ -139,14 +199,18 @@ public class GUI extends JFrame {
         killAllNodes();
         stopClusterBtn.setEnabled(false);
         startClusterBtn.setEnabled(true);
-        leaderLabel.setText("Leader: unknown");
+        lastKnownLeader = "unknown";
         appendOutput("All nodes stopped.\n");
+        for (JButton btn : nodeKillButtons) {
+            btn.setEnabled(false);
+            btn.setText("Kill Node " + (Arrays.asList(nodeKillButtons).indexOf(btn) + 1));
+        }
     }
 
     private void onReset() {
         killAllNodes();
         client = null;
-        leaderLabel.setText("Leader: unknown");
+        lastKnownLeader = "unknown";
         startClusterBtn.setEnabled(true);
         stopClusterBtn.setEnabled(false);
         connectClientBtn.setEnabled(true);
@@ -154,6 +218,10 @@ public class GUI extends JFrame {
         sendBtn.setEnabled(false);
         outputArea.setText("");
         appendOutput("Reset complete.\n");
+        for (JButton btn : nodeKillButtons) {
+            btn.setEnabled(false);
+            btn.setText("Kill Node " + (Arrays.asList(nodeKillButtons).indexOf(btn) + 1));
+        }
     }
 
     // THIS IS JANK, JANK, JANK, im going crazy trying to get this to work dynamically tho 
@@ -208,12 +276,12 @@ public class GUI extends JFrame {
             // UPDATE THE GUI
             SwingUtilities.invokeLater(() -> {
                 if (found) {
-                    leaderLabel.setText("Leader: Node " + getLeaderId(client));
+                    lastKnownLeader = getLeaderId(client);
                     commandField.setEnabled(true);
                     sendBtn.setEnabled(true);
-                    appendOutput("Connected!\n");
+                    appendOutput("Connected and current leader is Node " + lastKnownLeader + "\n");
                 } else {
-                    leaderLabel.setText("No leader found");
+                    lastKnownLeader = "unknown";
                     appendOutput("No leader found.\n");
                 }
             });
@@ -244,7 +312,22 @@ public class GUI extends JFrame {
             String response = client.sendRequest(cmd);
             // UPDATE THE GUI ON THE MAIN THREAD
             SwingUtilities.invokeLater(() -> {
-                appendOutput("Response: " + response + "\n");
+                appendOutput("Response is " + response + "\n");
+                
+                // IF WE GOT A CONNECTION ERROR, TRY TO FIND NEW LEADER
+                if (response.contains("ERROR") || response.contains("refused")) {
+                    new Thread(() -> {
+                        if (client.discoverLeader()) {
+                            String newLeader = getLeaderId(client);
+                            SwingUtilities.invokeLater(() -> {
+                                if (!newLeader.equals(lastKnownLeader)) {
+                                    appendOutput("Reconnected to new Leader who is Node " + newLeader + "\n");
+                                    lastKnownLeader = newLeader;
+                                }
+                            });
+                        }
+                    }).start();
+                }
             });
         }).start();
     }
