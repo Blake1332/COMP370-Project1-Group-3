@@ -1,0 +1,30 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#EAF4FF", "primaryTextColor": "#0F172A", "primaryBorderColor": "#1E3A8A", "lineColor": "#334155", "secondaryColor": "#FFF7E6", "tertiaryColor": "#F8FAFC", "fontFamily": "Trebuchet MS"}}}%%
+flowchart LR
+    %% COMP370 Mini Project 1 - Use Case Diagram
+    Admin[System Admin]
+    User[Service Client]
+
+    subgraph SRMS[Server Redundancy Management System]
+      UC1((Start / Stop Cluster))
+      UC2((Monitor Server Health))
+      UC3((Detect Primary Failure))
+      UC4((Promote Backup to Primary))
+      UC5((Discover Current Primary))
+      UC6((Send PROCESS Request))
+      UC7((Replicate State to Backups))
+      UC8((View Logs and Status))
+      UC9((Simulate Failure Scenario))
+    end
+
+    Admin --> UC1
+    Admin --> UC2
+    Admin --> UC8
+    Admin --> UC9
+
+    User --> UC5
+    User --> UC6
+
+    UC2 --> UC3
+    UC3 --> UC4
+    UC5 --> UC6
+    UC6 --> UC7

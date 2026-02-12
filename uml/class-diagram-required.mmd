@@ -1,0 +1,128 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#EAF4FF", "primaryTextColor": "#0F172A", "primaryBorderColor": "#1E3A8A", "lineColor": "#334155", "secondaryColor": "#FFF7E6", "tertiaryColor": "#F8FAFC", "fontFamily": "Trebuchet MS"}}}%%
+classDiagram
+    %% COMP370 Mini Project 1 - Class Diagram
+    class Logger {
+      -String serverId
+      -PrintWriter fileWriter
+      +log(message)
+      +close()
+    }
+
+    class RaftRPC {
+      <<utility>>
+    }
+
+    class RequestVoteArgs
+    class RequestVoteResults
+    class AppendEntriesArgs
+    class AppendEntriesResults
+    class LogEntry
+
+    class RaftNode {
+      +int id
+      +Role role
+      +int currentTerm
+      +Integer votedFor
+      +Integer currentLeaderId
+      +List~LogEntry~ log
+      +int commitIndex
+      +int lastApplied
+      +Map~Integer,Integer~ matchIndex
+      +Map~Integer,Integer~ nextIndex
+      +Map~Integer,Integer~ clusterMembers
+      +resetElectionTimeout()
+      +isElectionTimeout() bool
+      +handleRequestVote(args) RequestVoteResults
+      +startElection()
+      +handleAppendEntries(args) AppendEntriesResults
+      +becomeLeader()
+      +appendAsLeader(command) int
+      +stepDown(term)
+    }
+
+    class Role {
+      <<enumeration>>
+      FOLLOWER
+      CANDIDATE
+      LEADER
+    }
+
+    class RaftServer {
+      -DatagramSocket socket
+      -ServerSocket clientSocket
+      -RaftNode raftNode
+      -int port
+      -int clientPort
+      -Logger logger
+      -Map~Integer,Integer~ lastSentIndexByFollower
+      +start()
+      -handlePacket(packet)
+      -startElection()
+      -handleVoteResult(res)
+      -sendHeartbeats()
+      -handleAppendEntriesResult(res, fromId)
+      -updateCommitIndex()
+      -handleClientConnection(client)
+      +main(args)
+    }
+
+    class Client {
+      -Map~Integer,Integer~ clusterMembers
+      -Integer currentLeaderId
+      +discoverLeader() bool
+      +sendRequest(command) String
+      +getCurrentLeaderId() Integer
+      +main(args)
+    }
+
+    class ClientRequest {
+      +RequestType type
+      +String command
+    }
+
+    class RequestType {
+      <<enumeration>>
+      PROCESS_JOB
+      GET_LEADER
+    }
+
+    class ClientResponse {
+      +boolean success
+      +String message
+      +Integer leaderId
+    }
+
+    class GUI {
+      -Process[] nodeProcesses
+      -Client client
+      +main(args)
+      -onStartCluster()
+      -onStopCluster()
+      -onConnectClient()
+      -onSendCommand()
+    }
+
+    RaftServer *-- RaftNode
+    RaftNode --> Role
+    RaftNode --> Logger
+    RaftNode o-- LogEntry
+    RaftServer --> Logger
+
+    RaftRPC ..> RequestVoteArgs
+    RaftRPC ..> RequestVoteResults
+    RaftRPC ..> AppendEntriesArgs
+    RaftRPC ..> AppendEntriesResults
+    RaftRPC ..> LogEntry
+
+    RaftServer ..> RaftRPC
+    RaftServer ..> ClientRequest
+    RaftServer ..> ClientResponse
+
+    Client ..> ClientRequest
+    Client ..> ClientResponse
+    ClientRequest --> RequestType
+    Client --> Logger
+
+    GUI --> Client
+    GUI ..> RaftServer : starts 3 processes
+

@@ -1,0 +1,34 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#EAF4FF", "primaryTextColor": "#0F172A", "primaryBorderColor": "#1E3A8A", "lineColor": "#334155", "secondaryColor": "#FFF7E6", "tertiaryColor": "#F8FAFC", "fontFamily": "Trebuchet MS"}}}%%
+sequenceDiagram
+    %% COMP370 Mini Project 1 - Sequence: Startup and Leader Election
+    autonumber
+    participant S1 as Server 1
+    participant S2 as Server 2
+    participant S3 as Server 3
+
+    Note over S1,S3: Cluster startup
+    S1->>S1: start() main loop
+    S2->>S2: start() main loop
+    S3->>S3: start() main loop
+
+    Note over S1,S3: Election timeout on S1
+    S1->>S1: startElection()\nrole=CANDIDATE, term++, self-vote
+    S1->>S2: RequestVoteArgs(term, candidateId, lastLog)
+    S1->>S3: RequestVoteArgs(term, candidateId, lastLog)
+
+    S2->>S2: handleRequestVote()
+    S3->>S3: handleRequestVote()
+    S2-->>S1: voteGranted=true
+    S3-->>S1: voteGranted=true
+
+    S1->>S1: majority reached
+    S1->>S1: becomeLeader()
+    Note over S1: Leader elected
+
+
+    loop Heartbeat cycle
+      S1->>S2: AppendEntriesArgs(heartbeat)
+      S1->>S3: AppendEntriesArgs(heartbeat)
+      S2-->>S1: AppendEntriesResults(success)
+      S3-->>S1: AppendEntriesResults(success)
+    end

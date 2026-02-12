@@ -1,0 +1,28 @@
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#EAF4FF", "primaryTextColor": "#0F172A", "primaryBorderColor": "#1E3A8A", "lineColor": "#334155", "secondaryColor": "#FFF7E6", "tertiaryColor": "#F8FAFC", "fontFamily": "Trebuchet MS"}}}%%
+sequenceDiagram
+    %% COMP370 Mini Project 1 - Sequence: Client Request (Normal)
+    autonumber
+    participant C as Client
+    participant N as Queried Node
+    participant L as Current Leader
+    participant B1 as Backup 1
+    participant B2 as Backup 2
+
+    C->>N: GET_LEADER
+    N-->>C: leaderId = L
+
+    C->>L: PROCESS_JOB(command)
+    L->>L: appendAsLeader(command)
+
+    par replicate to backups
+      L->>B1: AppendEntriesArgs(entries)
+      B1-->>L: AppendEntriesResults(success)
+    and
+      L->>B2: AppendEntriesArgs(entries)
+      B2-->>L: AppendEntriesResults(success)
+    end
+    Note over L: majority replicated → commit
+
+
+    L->>L: updateCommitIndex()\napply committed entry
+    L-->>C: success=true, "Job accepted"
