@@ -8,6 +8,12 @@ import java.io.*;
  //The network server for a Raft node.
  //Handles communication, serialization, and the main loop.
 public class RaftServer {
+    private static final int HEARTBEAT_DELAY_MS = 500;
+
+    private static void sleepHeartbeatDelay() throws InterruptedException {
+        Thread.sleep(HEARTBEAT_DELAY_MS);
+    }
+
     private DatagramSocket socket;
     private ServerSocket clientSocket;
     private RaftNode raftNode;
@@ -113,6 +119,7 @@ public class RaftServer {
             } else if (obj instanceof RaftRPC.AppendEntriesArgs) {
                 // Handle a heartbeat or log replication request from a leader
                 logger.log("Handling AppendEntriesArgs from " + packet.getAddress() + ":" + packet.getPort());
+                sleepHeartbeatDelay();
                 RaftRPC.AppendEntriesResults res = raftNode.handleAppendEntries((RaftRPC.AppendEntriesArgs) obj);
                 sendResponse(res, packet.getAddress(), packet.getPort());
 
@@ -190,6 +197,7 @@ public class RaftServer {
         }
         raftNode.lastHeartbeat = System.currentTimeMillis();
         logger.log("Sending heartbeats to followers...");
+        sleepHeartbeatDelay();
         for (Map.Entry<Integer, Integer> member : raftNode.clusterMembers.entrySet()) {
             if (member.getKey() != raftNode.id) {
                 logger.log("Sending heartbeat to node " + member.getKey() + " at port " + member.getValue());

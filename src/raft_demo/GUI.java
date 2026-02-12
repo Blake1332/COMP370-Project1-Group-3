@@ -11,6 +11,7 @@ public class GUI extends JFrame {
     private Process[] nodeProcesses = new Process[3];
     private JButton[] nodeKillButtons = new JButton[3];
     private JButton startClusterBtn, stopClusterBtn, connectClientBtn, sendBtn, resetBtn;
+    private JCheckBox delay;
     private JTextField commandField;
     private JTextArea outputArea;
     private Client client;
@@ -48,6 +49,7 @@ public class GUI extends JFrame {
         row1.add(startClusterBtn = new JButton("Start Cluster"));
         row1.add(stopClusterBtn = new JButton("Stop Cluster"));
         row1.add(resetBtn = new JButton("Hard Reset"));
+        row1.add(delay = new JCheckBox("Simulate network delay", false));
         JComboBox<String> logDropdown = new JComboBox<>(new String[]{
             "View Logs", "Node 1", "Node 2", "Node 3", "Client"
         });
@@ -185,6 +187,9 @@ public class GUI extends JFrame {
                 appendOutput("Node 2 started.\n");
                 appendOutput("Node 3 started.\n");
                 appendOutput("Cluster started successfully.\n");
+                if (delay != null && delay.isSelected()) {
+                    appendOutput("Network delay started (500ms heartbeats).");
+                }
                 stopClusterBtn.setEnabled(true);
                 for (JButton btn : nodeKillButtons) {
                     btn.setEnabled(true);
@@ -233,12 +238,16 @@ public class GUI extends JFrame {
     }
 
     private void startNode(int id) {
-        try {
-            Process proc = new ProcessBuilder("java", "-cp", "bin", "raft_demo.RaftServer", String.valueOf(id))
-                .redirectErrorStream(true).redirectOutput(ProcessBuilder.Redirect.DISCARD).start();
-            nodeProcesses[id - 1] = proc;
-        } catch (IOException ex) {
-            ex.printStackTrace();
+        try { //THIS is a mess. but I forgot to do it and it works
+            if (delay != null && delay.isSelected()) {
+                nodeProcesses[id - 1] = new ProcessBuilder("java", "-Draft.heartbeat.delay.ms=500", "-cp", "bin", "raft_demo.RaftServer", String.valueOf(id))
+                    .redirectErrorStream(true).redirectOutput(ProcessBuilder.Redirect.INHERIT).start();
+            } else {
+                nodeProcesses[id - 1] = new ProcessBuilder("java", "-cp", "bin", "raft_demo.RaftServer", String.valueOf(id))
+                    .redirectErrorStream(true).redirectOutput(ProcessBuilder.Redirect.INHERIT).start();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
     private boolean compileProject() {
